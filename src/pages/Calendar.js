@@ -22,6 +22,8 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete';
 import { getAuth } from 'firebase/auth';
 
+const url = 'https://nodejs-firebase-six.vercel.app';
+
 moment.locale('pt-br');
 const localizer = momentLocalizer(moment);
 
@@ -156,7 +158,7 @@ const Calendar = () => {
         // Dados enviados ao backend
         const participantEmails = data.participants.map((user) => user.email);
         try {
-          await fetch('http://localhost:5000/send-email', {
+          await fetch(url, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -226,7 +228,7 @@ const Calendar = () => {
     const fetchUsers = async () => {
       try {
         const token = await auth.currentUser.getIdToken();
-        const response = await fetch('http://localhost:5000/users-emails', {
+        const response = await fetch(url, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await response.json();
