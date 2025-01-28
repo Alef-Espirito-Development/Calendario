@@ -82,7 +82,7 @@ const Calendar = () => {
 
   // Lista de feriados brasileiros padrão
   const brazilianHolidays = [
-    { title: 'Carnaval', date: '2025-02-12', description: 'Feriado Nacional' },
+    { title: 'Carnaval', date: '2025-02-28', description: 'Feriado Nacional' },
     { title: 'Sexta-feira Santa', date: '2025-03-28', description: 'Feriado Nacional' },
     { title: 'Municipal', date: '2025-04-04', description: 'Aniversário de Inocência' },
     { title: 'Tiradentes', date: '2025-04-21', description: 'Feriado Nacional' },
