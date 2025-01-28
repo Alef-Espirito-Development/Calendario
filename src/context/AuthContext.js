@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  const isAdmin = (user) => user?.email === 'alefj.development@gmail.com';
+  const isAdmin = (user) => user?.email === 'alefj.espirito@gmail.com';
 
   return (
     <AuthContext.Provider value={{ user, loading, isAdmin }}>
