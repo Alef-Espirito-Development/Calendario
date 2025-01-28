@@ -158,7 +158,7 @@ const Calendar = () => {
         // Dados enviados ao backend
         const participantEmails = data.participants.map((user) => user.email);
         try {
-          await fetch(url, {
+          await fetch(`${url}/send-email`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -228,7 +228,7 @@ const Calendar = () => {
     const fetchUsers = async () => {
       try {
         const token = await auth.currentUser.getIdToken();
-        const response = await fetch(url, {
+        const response = await fetch(`${url}/users-emails`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await response.json();
